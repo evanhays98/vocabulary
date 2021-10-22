@@ -1,0 +1,148 @@
+.header {
+  height: 7vh;
+}
+
+.nav
+{
+  background : $background;
+  position: fixed;
+  width : 100vw;
+  height: 75px;
+  display: flex;
+  justify-content : space-between;
+  z-index: 10;
+
+}
+/*
+  background-image: linear-gradient(45deg, $colorA, $colorD);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+ */
+.navlinkT{
+  z-index: 11;
+  color: #e99cee;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &.avtice {
+    color: $colorB;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+
+
+.bars
+{
+  display: none;
+  color: $colorB;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    transform: translate(-100%, 50%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  &:hover{
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.4);
+  }
+}
+
+.bars-none
+{
+  display: none;
+}
+
+.navmenu
+{
+  background: $background;
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  transition: all 0.5s ease-out;
+
+  @media screen and (max-width: 768px)
+  {
+    background: #131417;
+    position :fixed;
+    right : 0;
+    margin:0;
+    top: 75px;
+    height: calc(100% - 75px);
+    width: 90vw;
+    flex-direction : column;
+
+  }
+}
+
+.navmenu.clicked {
+  @media screen and (max-width: 768px)
+  {
+    transition: all 0.5s ease-out;
+    right:-90vw;
+  }
+}
+
+.navlink {
+  color: $colorB;
+  display: flex;
+  align-items: center;
+  font-family: $fontT-1;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    color: $colorB;;
+    height: 10%;
+    padding: 0 50px;
+    font-size: 25px;
+  }
+
+  &.active {
+    color: $colorB;
+  }
+
+  &:hover{
+    border-radius: 8px;
+    //box-shadow: 0px 0px 5px 5px rgba(213, 229, 236, 0.5);
+    color: $color;
+  }
+}
+.header-line {
+  position: fixed;
+  background-image: linear-gradient(45deg, #b36cc2, #842020);
+  top: 70px;
+  height: 5px;
+  width: 100%;
+  z-index: 10;
+}
+
+.main-container {
+  padding-top: 75px;
+}
+

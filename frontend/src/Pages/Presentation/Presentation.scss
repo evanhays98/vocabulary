@@ -1,0 +1,37 @@
+.presentation .pres-logo {
+    postion: relative;
+    text-align: center;
+    padding: 15vw;
+}
+
+.presentation .text-gradiant {
+    display: inline;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: $fontT-1;
+    font-size: 80px;
+    font-weight: 100;
+    background-image: linear-gradient(45deg, #b36cc2, #842020);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+@media screen and (max-width: 768px) {
+    font-size: 60px;
+    }
+}
+
+.presentation .containerDesc {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.presentation .containerDesc p {
+    display: inline;
+    letter-spacing: 2px;
+    font-family: $fontW-1;
+    font-size: 25px;
+    color: $color;
+}
