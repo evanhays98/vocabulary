@@ -1,0 +1,106 @@
+.ContentSentence {
+  position: relative;
+  width: 50%;
+  height: auto;
+  background: rgba(42, 38, 40, 0.76);
+  border-radius: 15px;
+
+}
+
+.ContentSentence .text{
+  display: inline;
+  letter-spacing: 2px;
+  font-family: $fontW-1;
+  word-spacing: 1px;
+  font-size: 22px;
+  color: $color;
+}
+
+.ContentSentence .request{
+  position: relative;
+  display: inline;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  font-family: $fontW-1;
+  font-size: 22px;
+  color: $color;
+}
+
+.ContentSentence .request .input{
+  position: absolute;
+  left: -1px;
+  width: 100%;
+  letter-spacing: 2px;
+  padding: 1px 1px 1px 2px;
+  word-spacing: 1px;
+  font-family: $fontW-1;
+  font-size: 22px;
+  color: $color;
+  background: #402d3d;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+}
+
+.ContentSentence .content2{
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  background: #402d3d;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.ContentSentence .content1{
+  text-align: justify;
+  padding: 20px 15px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.ContentSentence .indication{
+  display: block;
+  letter-spacing: 2px;
+  padding-left: 2px;
+  font-family: $fontW-1;
+  font-style: italic;
+  word-spacing: 1px;
+  font-size: 20px;
+  color: #e8c0e2;
+}
+
+.ContentSentence .traduction{
+  display: block;
+  letter-spacing: 2px;
+  padding-left: 2px;
+  font-family: $fontW-1;
+  font-style: italic;
+  word-spacing: 1px;
+  font-size: 20px;
+  color: #9f5aad;
+}
+
+.ContentSentence .button2 {
+  font-family: $fontT-1;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 20px;
+  margin-top: 2px;
+  font-size: 16px;
+  background: #76256b;
+  color: $color;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  align-self: flex-end;
+
+  &:hover {
+    background: #6d2234;
+  }
+}
