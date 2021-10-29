@@ -1,22 +1,74 @@
-.Alert
-{
-  max-width: 800px;
-  z-index: 100;
+//Alert Provider
+.alert-provider {
   position: fixed;
   top: 74px;
+  right: 10px;
+  width: 400px;
+  z-index: 2;
+}
+
+
+//ALERT
+
+
+.Alert
+{
   width: 100%;
   margin: auto;
+  margin-bottom: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  overflow-x: hidden;
+  animation: SlideLeft 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.Alert.exit {
+  animation: SlideRight 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.Alert.SUCCESS {
+  background-color: #226d23;
+}
+
+.Alert.ERROR {
   background-color: #6d2234;
+}
+
+@keyframes SlideLeft {
+  0% {
+    margin-left: 120%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes SlideRight {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 120%;
+  }
+}
+
+.Alert .icon-wrapper{
+  width: 100%;
+  height: 34px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end;
+
 }
 
 .Alert .icon
 {
-  position: absolute;
-  top: -3px;
-  right: 0;
-  font-size: 40px;
+  font-size: 32px;
+  margin-top: 1px;
+  margin-left: 2px;
   color: #efd8de;
   transition: color 0.2s;
 
@@ -27,12 +79,23 @@
 }
 
 .Alert .desc {
-  margin-top: 30px;
-  margin-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
   letter-spacing: 2px;
-  padding-left: 2px;
   font-family: $fontW-1;
   word-spacing: 1px;
   font-size: 20px;
   color: #efd8de;
+}
+.Alert .bar {
+  height: 10px;
+}
+
+.Alert .bar.SUCCESS {
+  background-color: #9acd9b;
+}
+
+.Alert .bar.ERROR {
+  background-color: #cd9a9a;
 }

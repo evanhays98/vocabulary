@@ -1,21 +1,63 @@
-import React, {useState} from "react";
-import {TiDelete} from "react-icons/all";
+import React, {useReducer, useState} from "react";
+import {TiDeleteOutline} from "react-icons/all";
 
-interface AlertProps {
-    content : string,
-}
 
-const Alert = (props : AlertProps) => {
+const Alert = (props: any) => {
+    const [exit, setExit] = useState(false);
+    const [width, serWidth] = useState(0);
+    const [intervaleID, setIntervalID] = useState(null);
 
-    function RemoveAlert(event : any) {
-        event.preventDefault();
-        event.currentTarget.parentNode.style.display = 'none';
-        //event.target.parent.style.display = 'none';
+    const handleStartTimer = () => {
+        const id = setInterval(() => {
+            serWidth((prev) => {
+                if (prev < 100) {
+                    return prev + 2 / props.time
+                }
+                clearInterval(id)
+                return prev
+            })
+        }, 20);
+
+        // @ts-ignore
+        setIntervalID(id)
+    };
+
+    const handlePauseTimer = () => {
+        // @ts-ignore
+        clearInterval(intervaleID);
     }
+
+    React.useEffect(() => {
+        handleStartTimer()
+    }, [])
+
+    const handleCloseNotification = () => {
+        handlePauseTimer()
+        setExit(true)
+        setTimeout( () => {
+            props.dispatch({
+                type: "REMOVE_NOTIFICATION",
+                id: props.id
+            })
+        }, 400)
+    }
+
+    React.useEffect(() => {
+        if (width >= 100)
+        {
+            handleCloseNotification()
+        }
+    }, [width])
+
+
     return (
-        <div className="Alert">
-            <TiDelete className="icon" onClick={(e) => RemoveAlert(e)} />
-            <p className='desc'>{props.content}</p>
+        <div onMouseEnter={handlePauseTimer} onMouseLeave={handleStartTimer} className={`Alert
+             ${exit ? "exit" : ""} ${props.type}`}>
+            <div className="icon-wrapper">
+                <TiDeleteOutline className="icon" onClick={handleCloseNotification}/>
+            </div>
+            <p className='desc'>{props.message}</p>
+            <div className={`bar ${props.type}`} style={{width: `${width}%`}}/>
         </div>
     );
 };

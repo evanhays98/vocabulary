@@ -21,6 +21,7 @@ const FormAddChapter = () => {
                         <input type="text" name="description" id="description" required
                                onChange={(e) => setDescription(e.target.value)}/>
                     </div>
+                    <br/>
                     <div className="">
                         <input type="submit" value="Add"/>
                     </div>
