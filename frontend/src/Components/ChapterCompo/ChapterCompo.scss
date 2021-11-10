@@ -1,0 +1,24 @@
+.ChapterCompo {
+  width: 100%;
+  margin: 20px 10px;
+  border: solid 1px white;
+}
+
+.ChapterCompo .inUse{
+  border: solid 1px green;
+}
+
+.ChapterCompo h1{
+  background-color: #e99cee;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: $fontT-1;
+}
+
+.ChapterCompo p{
+  font-size: 15px;
+  font-family: $fontW-1;
+  padding: 4px 20px;
+}
